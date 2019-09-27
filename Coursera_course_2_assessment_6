@@ -2,6 +2,8 @@
 #and contains a while loop that only stops once the element of the list is the number 7. 
 #What is returned is a list of all of the numbers up until it reaches 7.
 
+
+
 def check_nums(list1):
     i = 0
     sub = []
@@ -54,6 +56,14 @@ def stop_at_z(list1):
 
 list1 = ["This", "will", "run", "until", "z", "i"]
 stop_at_z(list1)
+
+#you can also use the following... the solution above basically uses the length of the list to stop the while loop 
+    i = 0
+    sub = []
+    while "z" not in list1[1]
+        sub.append(x[i])
+        i = i + 1
+    return sub
 
 
 --------------
