@@ -39,3 +39,21 @@ def sublist(list1):
 
 list1 = ["This", "will", "run", "until", "STOP"]
 sublist(list1)
+
+
+#Write a function called stop_at_z that iterates through a list of strings. Using a while loop, 
+#append each string to a new list until the string that appears is “z”. The function should return the new list.
+
+def stop_at_z(list1):
+    i = 0
+    sub = []
+    while i <len(list1):
+        if list1[i] =="z":
+            break
+        sub.append(list1[i])
+#        print(sub[i])
+        i+=1
+    return sub
+
+list1 = ["This", "will", "run", "until", "z", "i"]
+stop_at_z(list1)
