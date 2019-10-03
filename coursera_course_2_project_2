@@ -1,15 +1,48 @@
-#the function strip punctuation. Basically you loop through the punctation charachter list (for punct_char in punctuation_chars)and check if the punctuation is present in the word if punc in word:
+#the function replaces punctuation value with empty value. Basically you loop through the punctation charachter list (for punct_char in punctuation_chars).
+
 
 punctuation_chars = ["'", '"', ",", ".", "!", ":", ";", '#', '@']
 
 
-def strip_punctuation(word):
+def strip_punctuation(word): 
     for punct_char in punctuation_chars:
-        if punct_char in word:
+        if punct_char in word: 
             word = word.replace(punct_char, "")
     return word
+# somehow coursera 
+#print(strip_punctuation('#Amazing'))
+#print(strip_punctuation('wonderful'))
+#print(strip_punctuation('wow'))
+#print(strip_punctuation('incredible'))
 
-print(strip_punctuation('#Amazing'))
-print(strip_punctuation('wonderful'))
-print(strip_punctuation('wow'))
-print(strip_punctuation('incredible'))
+
+# the second function is taking in tweets text and removing the punctuations. 
+def get_pos(strSentences):
+    strSentences = strip_punctuation(strSentences)
+    print(strSentences)
+    listStrSentences = strSentences.split()
+    print(listStrSentences)
+
+    count = 0
+    for word in listStrSentences:
+        for positiveWord in positive_words:
+            if word == positiveWord:
+                count += 1
+    return count
+    
+ #the same for negative tweets --> in the next step I basically discovered I made a mistake...2 times the same function for differnet data sources.....so this I have to rewrite
+ # to one function taking away the difference between pos and negative....
+ def get_neg(txt_neg):
+    txt_neg = strip_punctuation(txt_neg)
+    print(txt_neg)
+    list_txt_neg = txt_neg.split()
+    print(list_txt_neg)
+
+    count = 0
+    for word in list_txt_neg:
+        for negativeWord in negative_words:
+            if word == negativeWord:
+                count = count+ 1
+    return count
+    
+    
