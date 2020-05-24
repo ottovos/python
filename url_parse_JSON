@@ -1,0 +1,40 @@
+##The program will prompt for a URL, read the JSON data from that URL using urllib and then parse and 
+##extract the comment counts from the JSON data, compute the sum of the numbers in the file
+
+
+import json
+import urllib
+import urllib.request
+import urllib.parse
+
+
+url=input("enter your url here;")
+data = urllib.request.urlopen(url)
+raw_data=data.read()
+print(raw_data)
+
+real_data=json.loads(raw_data)
+print(real_data)
+
+count=0
+sum=0
+for item in real_data["comments"]:
+    count = count + 1
+    sum = sum + item['count']
+
+print(sum)
+print(count)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
